@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鲍鱼菇-食用菌百科与烹饪食谱指南</title>
+    <meta name="description" content="鲍鱼菇（Lentinula edodes）详细介绍，包括营养功效、挑选技巧、生长环境、多种烹饪方法及食谱推荐。为您提供专业的食用菌知识与实用烹饪指南。">
+    <meta name="keywords" content="鲍鱼菇, 食用菌, 蘑菇, 烹饪食谱, 营养价值, 食材百科">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --primary-light: #e8f5e9;
+            --accent-color: #f9a825;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1b5e20 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Intro Section */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .intro-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .intro-text p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+
+        .intro-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Characteristics Grid */
+        .features {
+            background-color: var(--primary-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Nutrition Table */
+        .nutrition-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .nutrition-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nutrition-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem;
+            background: var(--bg-card);
+            border-radius: 4px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .nutrition-item span:first-child {
+            font-weight: 600;
+        }
+
+        /* Cooking Guide */
+        .cooking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .recipe-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .recipe-img {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .recipe-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recipe-content {
+            padding: 1.5rem;
+        }
+
+        .recipe-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .recipe-meta {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .recipe-content p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: #1b5e20;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--text-gray);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #eceff1;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: #b0bec5;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #37474f;
+            color: #90a4ae;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 1rem;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            nav.open {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro-grid, .nutrition-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .intro-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                鲍鱼菇百科
+            </a>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#intro" class="active">食材简介</a></li>
+                    <li><a href="#features">特征与营养</a></li>
+                    <li><a href="#recipes">烹饪食谱</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>鲍鱼菇：营养丰富的美味食用菌</h1>
+            <p>鲍鱼菇，又称杨树菇、侧耳，肉质肥厚，口感脆嫩，富含蛋白质与膳食纤维，是餐桌上的健康之选。</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Intro Section -->
+        <section id="intro" class="section">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h3>什么是鲍鱼菇？</h3>
+                        <p>鲍鱼菇是一种常见的食用菌，隶属于伞菌目白蘑科。因其外形酷似鲍鱼的足部，且口感鲜美如鲍鱼而得名。它原产于东南亚地区，现已在世界各地广泛栽培。</p>
+                        <p>鲍鱼菇属于木腐菌，通常生长在枯死的阔叶树（如杨树、柳树）的树桩或倒木上。它的菌盖呈半球形，成熟后平展，颜色由浅褐色转为深褐色。肉质肥厚，具有独特的清香和脆嫩的口感，非常耐炒耐煮，不易碎烂。</p>
+                        <p>在日常饮食中，鲍鱼菇不仅味道鲜美，更是一种低脂肪、高蛋白的健康食材，适合各种烹饪方式。</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://picsum.photos/seed/abalone_mushroom/600/400.jpg" alt="新鲜鲍鱼菇实物图" width="600" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>特征与营养价值</h2>
+                    <p>了解鲍鱼菇的特性和健康益处</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🍄</span>
+                        <h3>外形特征</h3>
+                        <p>菌盖直径可达10-20厘米，边缘内卷。菌肉白色或微带黄色，质地致密，有弹性。菌柄圆柱形，基部膨大。</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">⚖️</span>
+                        <h3>营养价值</h3>
+                        <p>富含蛋白质、维生素B群（特别是B1、B2）、维生素D及多种矿物质（钾、磷、钙）。热量低，适合减肥人群。</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🛡️</span>
+                        <h3>健康功效</h3>
+                        <p>具有抗肿瘤、增强免疫力、调节血脂和降血糖的作用。含有多糖类物质，有助于改善机体代谢。</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🍽️</span>
+                        <h3>烹饪特性</h3>
+                        <p>口感脆嫩，风味独特，有类似鲍鱼的鲜美味道。适合快炒、煲汤、烤制或做火锅配菜。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nutrition Table Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>营养成分参考表</h2>
+                    <p>每100克鲜品（数据仅供参考）</p>
+                </div>
+                <div class="nutrition-section">
+                    <div class="nutrition-list">
+                        <div class="nutrition-item">
+                            <span>热量</span>
+                            <span>约 28-35 千卡</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span>蛋白质</span>
+                            <span>约 3.0 - 4.0 克</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span>碳水化合物</span>
+                            <span>约 5.0 - 6.0 克</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span>膳食纤维</span>
+                            <span>约 1.5 克</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span>钙</span>
+                            <span>约 10 - 20 毫克</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span>铁</span>
+                            <span>约 1.0 - 2.0 毫克</span>
+                        </div>
+                    </div>
+                    <div class="nutrition-image">
+                        <img src="https://picsum.photos/seed/healthy_food/500/500.jpg" alt="健康饮食搭配" style="border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recipes Section -->
+        <section id="recipes" class="section" style="background-color: white;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>经典烹饪食谱</h2>
+                    <p>简单几步，做出美味鲍鱼菇</p>
+                </div>
+                <div class="cooking-grid">
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/stir_fry/400/300.jpg" alt="鲍鱼菇炒肉片">
+                        </div>
+                        <div class="recipe-content">
+                            <h3>鲍鱼菇炒肉片</h3>
+                            <div class="recipe-meta">
+                                <span>🔥 烹饪时间: 15分钟</span>
+                                <span>⭐ 难度: 简单</span>
+                            </div>
+                            <p>将鲜鲍鱼菇切片，与瘦肉片同炒。加入蒜末、生抽和少许蚝油提鲜。这道菜口感爽脆，肉香浓郁，是下饭神器。</p>
+                            <a href="#" class="btn">查看详情</a>
+                        </div>
+                    </article>
+
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/soup/400/300.jpg" alt="鲍鱼菇鸡汤">
+                        </div>
+                        <div class="recipe-content">
+                            <h3>鲍鱼菇鸡汤</h3>
+                            <div class="recipe-meta">
+                                <span>🔥 烹饪时间: 45分钟</span>
+                                <span>⭐ 难度: 中等</span>
+                            </div>
+                            <p>将鸡块焯水后与鲍鱼菇、姜片一同炖煮。出锅前加入枸杞和盐调味。汤色清亮，味道鲜美，营养丰富。</p>
+                            <a href="#" class="btn">查看详情</a>
+                        </div>
+                    </article>
+
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/roast/400/300.jpg" alt="蒜香烤鲍鱼菇">
+                        </div>
+                        <div class="recipe-content">
+                            <h3>蒜香烤鲍鱼菇</h3>
+                            <div class="recipe-meta">
+                                <span>🔥 烹饪时间: 20分钟</span>
+                                <span>⭐ 难度: 简单</span>
+                            </div>
+                            <p>鲍鱼菇对半切开，刷上橄榄油，撒上蒜末、黑胡椒和海盐。放入烤箱200度烤10-15分钟，直至边缘金黄焦香。</p>
+                            <a href="#" class="btn">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于鲍鱼菇的食用与选购</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item active">
+                        <div class="faq-question">鲍鱼菇怎么挑选？</div>
+                        <div class="faq-answer">选择菌盖完整、边缘内卷的，避免选择菌盖已经完全展开或边缘翻卷过大的。优质的鲍鱼菇颜色应为淡褐色至深褐色，表面干燥不发黏，菌柄挺拔。闻起来应有清新的菌香，无异味。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">鲍鱼菇可以生吃吗？</div>
+                        <div class="faq-answer">不建议生吃。新鲜食用菌可能含有细菌或寄生虫卵，且鲍鱼菇质地较硬，生吃口感不佳且难以消化。务必经过高温烹饪杀菌后再食用。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">鲍鱼菇有什么禁忌人群？</div>
+                        <div class="faq-answer">一般人群均可食用。但由于鲍鱼菇属于高嘌呤食物，痛风患者和尿酸高的人群应适量食用。对蘑菇过敏者应避免食用。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">鲍鱼菇如何保存？</div>
+                        <div class="faq-answer">新鲜鲍鱼菇应放入冰箱冷藏（0-4℃）保存，最好用纸巾包裹以吸收多余水分，防止腐烂。建议在2-3天内食用完毕。干鲍鱼菇则需密封防潮保存。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>鲍鱼菇百科</h4>
+                    <p style="color: #b0bec5; font-size: 0.9rem;">专注于提供最准确的食用菌知识、营养分析及烹饪指南，助您健康饮食。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#intro">食材简介</a></li>
+                        <li><a href="#features">营养功效</a></li>
+                        <li><a href="#recipes">烹饪食谱</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关食材</h4>
+                    <ul>
+                        <li><a href="#">香菇</a></li>
+                        <li><a href="#">平菇</a></li>
+                        <li><a href="#">金针菇</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 鲍鱼菇百科指南. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        const navLinks = document.querySelectorAll('nav a');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('open');
+            menuBtn.textContent = nav.classList.contains('open') ? '✕' : '☰';
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                menuBtn.textContent = '☰';
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+  </html>
