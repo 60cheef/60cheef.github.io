@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩张 - 知名旅行博主与内容创作者的官方网站，提供最新旅行攻略、深度游记、摄影技巧分享及个人生活记录。">
+    <meta name="keywords" content="韩张, 旅行博主, 旅行攻略, 摄影技巧, 游记分享">
+    <title>韩张 - 深度旅行攻略与影像生活记录</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .btn-subscribe:hover {
+            background-color: #1a252f;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/travel_hero/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 36px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-hero:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* Featured Section */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .featured-main {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .featured-main img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-main:hover img {
+            transform: scale(1.05);
+        }
+
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 40px 24px 24px;
+            color: white;
+        }
+
+        .featured-overlay h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .featured-overlay .meta {
+            font-size: 14px;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .featured-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .featured-item {
+            display: flex;
+            gap: 16px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .featured-item:hover {
+            transform: translateX(4px);
+        }
+
+        .featured-item img {
+            width: 120px;
+            height: 90px;
+        }
+
+        .featured-item-content {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-item-content h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .tag {
+            font-size: 12px;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-category {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .about-container {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 24px;
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item h4 {
+            font-size: 28px;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+        }
+
+        .stat-item span {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-container {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">韩<span>张</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#travel">旅行足迹</a></li>
+                    <li><a href="#guide">摄影指南</a></li>
+                    <li><a href="#about">关于我</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#subscribe" class="btn-subscribe">订阅更新</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>用镜头记录世界的温度</h1>
+                <p>这里有最真实的旅行攻略、独家的摄影技巧分享以及关于生活与旅行的深度思考。让我们一起出发，探索未知的远方。</p>
+                <a href="#travel" class="btn-hero">开始探索</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Featured Section -->
+            <section id="travel" class="featured-grid">
+                <div class="featured-main">
+                    <img src="https://picsum.photos/seed/featured_main/800/400.jpg" alt="最新游记封面">
+                    <div class="featured-overlay">
+                        <span class="tag">深度特辑</span>
+                        <h2>川西秘境：寻找失落的云端天堂</h2>
+                        <div class="meta">
+                            <span>2023年10月15日</span>
+                            <span>•</span>
+                            <span>摄影/文字</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-list">
+                    <article class="featured-item">
+                        <img src="https://picsum.photos/seed/featured_1/200/150.jpg" alt="推荐1">
+                        <div class="featured-item-content">
+                            <span class="tag">旅行攻略</span>
+                            <h3>独自旅行十诫：如何安全地享受自由</h3>
+                        </div>
+                    </article>
+                    <article class="featured-item">
+                        <img src="https://picsum.photos/seed/featured_2/200/150.jpg" alt="推荐2">
+                        <div class="featured-item-content">
+                            <span class="tag">装备推荐</span>
+                            <h3>轻量化背包客的必备清单</h3>
+                        </div>
+                    </article>
+                    <article class="featured-item">
+                        <img src="https://picsum.photos/seed/featured_3/200/150.jpg" alt="推荐3">
+                        <div class="featured-item-content">
+                            <span class="tag">美食探店</span>
+                            <h3>藏在巷弄里的百年老味道</h3>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Latest Articles -->
+            <section>
+                <h2 class="section-title">最新发布</h2>
+                <div class="content-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/article_1/400/300.jpg" alt="文章1" class="card-img">
+                        <div class="card-body">
+                            <span class="card-category">风光摄影</span>
+                            <h3 class="card-title">日落时分的构图美学：如何拍出电影感大片</h3>
+                            <p class="card-excerpt">光线是摄影的灵魂，掌握黄金时刻的拍摄技巧，让你的照片瞬间提升质感...</p>
+                            <div class="card-footer">
+                                <span>2023-10-12</span>
+                                <span>阅读 1.2k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/article_2/400/300.jpg" alt="文章2" class="card-img">
+                        <div class="card-body">
+                            <span class="card-category">城市漫游</span>
+                            <h3 class="card-title">上海深夜食堂：那些不为人知的小店</h3>
+                            <p class="card-excerpt">在霓虹灯熄灭之前，这座城市还有另一张面孔。探访那些坚持手艺的老店主...</p>
+                            <div class="card-footer">
+                                <span>2023-10-10</span>
+                                <span>阅读 856</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/article_3/400/300.jpg" alt="文章3" class="card-img">
+                        <div class="card-body">
+                            <span class="card-category">徒步指南</span>
+                            <h3 class="card-title">雨崩徒步：身体在地狱，眼睛在天堂</h3>
+                            <p class="card-excerpt">从西当到神瀑，这条线路的难度与风景并存。为你整理详细的装备清单和路线规划...</p>
+                            <div class="card-footer">
+                                <span>2023-10-08</span>
+                                <span>阅读 2.3k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/article_4/400/300.jpg" alt="文章4" class="card-img">
+                        <div class="card-body">
+                            <span class="card-category">数码评测</span>
+                            <h3 class="card-title">2023年旅行相机选购指南：微单还是手机？</h3>
+                            <p class="card-excerpt">面对市面上琳琅满目的设备，我们该如何根据预算和需求做出选择？</p>
+                            <div class="card-footer">
+                                <span>2023-10-05</span>
+                                <span>阅读 3.1k</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about-section">
+                <div class="container about-container">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/about_me/600/400.jpg" alt="韩张个人照片">
+                    </div>
+                    <div class="about-content">
+                        <h2>你好，我是韩张</h2>
+                        <p>一名热衷于用脚步丈量大地、用镜头捕捉光影的旅行者与内容创作者。我坚信，最好的风景永远在路上，而分享则是旅行的另一种延续。</p>
+                        <p>在这里，我不仅记录每一次出发的冒险，更致力于提供实用的旅行攻略和摄影教程，希望能帮助更多人在旅途中找到属于自己的节奏与感动。</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h4>12</h4>
+                                <span>年旅行经验</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>35</h4>
+                                <span>个国家</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>100+</h4>
+                                <span>篇原创文章</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="subscribe">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>韩张</h3>
+                    <p>记录生活，分享感动。欢迎来到我的旅行世界，让我们一起出发，探索未知。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#">旅行足迹</a></li>
+                        <li><a href="#">摄影教程</a></li>
+                        <li><a href="#">装备评测</a></li>
+                        <li><a href="#">美食探店</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">作者简介</a></li>
+                        <li><a href="#">合作联系</a></li>
+                        <li><a href="#">加入社群</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博</a></li>
+                        <li><a href="#">小红书</a></li>
+                        <li><a href="#">Bilibili</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 韩张旅行博客 版权所有 | Designed for Exploration</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
