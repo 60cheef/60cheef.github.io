@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="圣典在线提供权威的宗教经典、哲学著作与历史文献的数字化阅读服务，涵盖《圣经》、《古兰经》、道教经典及佛经大全，支持全文检索与高清排版。">
+    <meta name="keywords" content="圣典,宗教经典,佛经大全,圣经在线,古兰经,道教经典,哲学文献,数字图书馆">
+    <title>圣典-权威宗教经典与哲学文献数字阅览平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #8e44ad;
+            --gold-color: #c0392b;
+            --bg-color: #f9f7f2;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: #d4af37; /* Gold accent */
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: #fff;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .search-bar {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 0.3rem 0.8rem;
+            align-items: center;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            outline: none;
+            width: 150px;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4a6fa5 100%);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold-color);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.4);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--accent-color);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .category-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .category-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Featured Classics Section */
+        .featured-section {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+        }
+
+        .featured-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .featured-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .classic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .classic-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .classic-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .classic-cover {
+            width: 80px;
+            height: 100px;
+            background-color: #ddd;
+            border-radius: 4px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.8rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .classic-info {
+            flex: 1;
+        }
+
+        .classic-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--primary-color);
+        }
+
+        .classic-info .meta {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .classic-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .btn-read {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-read:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Usage Guide / Features */
+        .features-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--gold-color);
+            font-weight: bold;
+        }
+
+        .feature-image {
+            background-color: #e8eef2;
+            border-radius: var(--border-radius);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--text-light);
+            border-top: 1px solid #f0f0f0;
+            display: none;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 3rem 0 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #d4af37;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features-section {
+                grid-template-columns: 1fr;
+            }
+
+            .classic-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .classic-cover {
+                width: 100%;
+                height: 150px;
+            }
+
+            .classic-info {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>经</span>典圣典
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">佛教经典</a></li>
+                    <li><a href="#">基督教</a></li>
+                    <li><a href="#">伊斯兰教</a></li>
+                    <li><a href="#">道教典籍</a></li>
+                    <li><a href="#">哲学思想</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="检索经文、章节...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>圣典数字阅览平台</h1>
+            <p>汇聚全球权威宗教典籍与哲学文献，提供高清排版、全文检索与深度解读，助您在数字时代重拾智慧之光。</p>
+            <a href="#featured" class="cta-button">开始阅读</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Section: Categories -->
+        <section class="categories-grid">
+            <article class="category-card">
+                <div class="icon-box">🙏</div>
+                <h3>佛经大全</h3>
+                <p>收录大藏经、律藏、论藏，包含《金刚经》、《心经》、《法华经》等核心经典。</p>
+            </article>
+            <article class="category-card">
+                <div class="icon-box">✝️</div>
+                <h3>基督教圣经</h3>
+                <p>新旧约全书，支持和合本与英文KJV版本，包含注释与研读指南。</p>
+            </article>
+            <article class="category-card">
+                <div class="icon-box">☪️</div>
+                <h3>古兰经</h3>
+                <p>阿拉伯语原文对照与中文译文，包含清真言与信仰基础解读。</p>
+            </article>
+            <article class="category-card">
+                <div class="icon-box">☯️</div>
+                <h3>道教典籍</h3>
+                <p>《道德经》、《南华经》等道家哲学核心著作，及道教宫观仪轨文献。</p>
+            </article>
+        </section>
+
+        <!-- Section: Featured Classics -->
+        <section id="featured" class="featured-section">
+            <div class="featured-header">
+                <h3>精选圣典推荐</h3>
+                <a href="#" style="color: var(--accent-color); font-size: 0.9rem;">查看全部 →</a>
+            </div>
+            <div class="classic-list">
+                <!-- Item 1 -->
+                <article class="classic-item">
+                    <div class="classic-cover">
+                        <span>金刚经<br>般若类</span>
+                    </div>
+                    <div class="classic-info">
+                        <h4>金刚经 (全本)</h4>
+                        <div class="meta">
+                            <span>📖 5248字</span>
+                            <span>👁️ 12.5万阅读</span>
+                        </div>
+                        <p>《金刚经》是佛教大乘般若系经典的核心文献，文辞简练，义理深邃，讲述“无住生心”的智慧。</p>
+                    </div>
+                    <a href="#" class="btn-read">阅读全文</a>
+                </article>
+
+                <!-- Item 2 -->
+                <article class="classic-item">
+                    <div class="classic-cover">
+                        <span>道德经<br>哲学类</span>
+                    </div>
+                    <div class="classic-info">
+                        <h4>道德经 (王弼注本)</h4>
+                        <div class="meta">
+                            <span>📖 5162字</span>
+                            <span>👁️ 18.2万阅读</span>
+                        </div>
+                        <p>道家哲学奠基之作，阐述“道法自然”、“无为而治”的思想，对后世中国哲学影响深远。</p>
+                    </div>
+                    <a href="#" class="btn-read">阅读全文</a>
+                </article>
+
+                <!-- Item 3 -->
+                <article class="classic-item">
+                    <div class="classic-cover">
+                        <span>古兰经<br>宗教类</span>
+                    </div>
+                    <div class="classic-info">
+                        <h4>古兰经 (选段)</h4>
+                        <div class="meta">
+                            <span>📖 6236节</span>
+                            <span>👁️ 9.8万阅读</span>
+                        </div>
+                        <p>伊斯兰教的根本经典，记载了安拉的启示与先知穆罕默德的生平，语言优美，结构严谨。</p>
+                    </div>
+                    <a href="#" class="btn-read">阅读全文</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section: Features & Usage -->
+        <section class="features-section">
+            <div class="feature-text">
+                <h3>数字化阅读体验</h3>
+                <p style="margin-bottom: 1.5rem; color: #666;">在信息碎片化的时代，我们致力于提供沉浸式的经典阅读环境。圣典平台通过现代技术还原古籍风貌，帮助读者专注文本本身。</p>
+                <ul class="feature-list">
+                    <li>高清古籍排版，支持夜间护眼模式。</li>
+                    <li>智能全文检索，快速定位经文段落。</li>
+                    <li>多版本对照，方便学术研究与对比。</li>
+                    <li>静音朗读功能，解放双眼聆听智慧。</li>
+                </ul>
+            </div>
+            <div class="feature-image">
+                <div style="text-align: center;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">📚</div>
+                    <p>沉浸式阅读界面预览</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: FAQ -->
+        <section class="faq-section">
+            <div class="section-title">
+                <h2>常见问题</h2>
+                <p>关于圣典阅读与版权的说明</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    这些圣典的版权情况如何？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    本站收录的《金刚经》、《道德经》等中国传统文化典籍，因年代久远已进入公有领域，可免费查阅。基督教与伊斯兰教的经典文本，我们引用的是各教派公认的通用版本，仅供学术研究与宗教学习参考。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    支持离线阅读吗？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    目前平台主要提供在线阅读服务，以确保内容的及时更新与版本同步。我们建议在稳定的网络环境下进行阅读，以获得最佳的排版效果。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    如何参与经典注释的投稿？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    我们欢迎学术界与宗教界的专业人士提供高质量的注释与解读。请通过网站底部的联系邮箱与我们取得联系，提交您的专业资料。
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于圣典</h4>
+                    <ul>
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">编辑团队</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源分类</h4>
+                    <ul>
+                        <li><a href="#">佛教文献</a></li>
+                        <li><a href="#">基督教文本</a></li>
+                        <li><a href="#">哲学著作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助与支持</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>contact@shengdian.lib</li>
+                        <li>400-123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 经典圣典数字阅览平台. All Rights Reserved. 仅供学习交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
