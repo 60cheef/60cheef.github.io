@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="剑侠情缘2网络版（JX2）官方网站，提供经典武侠MMORPG游戏介绍、职业攻略、门派特色、版本更新公告及玩家社区互动。重温江湖恩怨，体验纯正武侠情怀。">
+    <meta name="keywords" content="剑侠情缘2网络版, JX2, 金山游戏, 武侠游戏, 网络游戏, 职业攻略, 门派介绍">
+    <title>剑侠情缘2网络版 - 经典武侠MMORPG重温与官方指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8b0000; /* 中国红 */
+            --secondary-color: #d4af37; /* 鎏金色 */
+            --bg-dark: #0f0f0f;
+            --bg-panel: #1a1a1a;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #333;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(15, 15, 15, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #a50000;
+        }
+
+        .btn-outline {
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark)), url('https://picsum.photos/seed/jx2hero/1920/600.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ddd;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        /* 游戏特色 */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 3rem 0 2rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background-color: var(--bg-panel);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* 职业展示 */
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .class-card {
+            background-color: var(--bg-panel);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .class-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: sepia(30%) contrast(110%);
+        }
+
+        .class-info {
+            padding: 1.5rem;
+        }
+
+        .class-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .class-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .tags {
+            margin-top: 1rem;
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: #ccc;
+        }
+
+        /* 公告与新闻 */
+        .news-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .news-list {
+            background-color: var(--bg-panel);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .news-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            min-width: 100px;
+        }
+
+        .news-title {
+            flex: 1;
+            padding-left: 1rem;
+        }
+
+        .news-title a:hover {
+            color: var(--secondary-color);
+        }
+
+        .sidebar {
+            background-color: var(--bg-panel);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .sidebar h3 {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .rank-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #222;
+        }
+        
+        .rank-list li span.rank-num {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .rank-list li:nth-child(1) .rank-num { background-color: var(--secondary-color); color: #000; }
+        .rank-list li:nth-child(2) .rank-num { background-color: #c0c0c0; }
+        .rank-list li:nth-child(3) .rank-num { background-color: #cd7f32; }
+
+        /* 下载区域 */
+        .download-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c0f0f 100%);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .download-box {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .download-btn {
+            display: block;
+            width: 200px;
+            margin: 2rem auto;
+            background-color: var(--secondary-color);
+            color: #000;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .download-btn:hover {
+            background-color: #fff;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #050505;
+            padding: 3rem 0;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #111;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                margin: 1rem 0;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .news-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">剑侠情缘<span>2</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#gameplay">游戏特色</a></li>
+                    <li><a href="#classes">门派职业</a></li>
+                    <li><a href="#news">游戏资讯</a></li>
+                    <li><a href="#download">客户端下载</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">账号登录</a>
+                <a href="#" class="btn btn-primary">立即注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>重温经典，再续江湖</h1>
+                <p>剑侠情缘2网络版：纯正武侠MMORPG，还原千年江湖恩怨，体验极致战斗快感。</p>
+                <div style="margin-top: 20px;">
+                    <a href="#download" class="btn btn-primary" style="margin-right: 10px;">开始游戏</a>
+                    <a href="#gameplay" class="btn btn-outline">了解更多</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 游戏特色 -->
+        <section id="gameplay" class="container">
+            <h2 class="section-title">江湖特色</h2>
+            <div class="features">
+                <article class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>真·即时战斗</h3>
+                    <p>摒弃传统回合制，采用流畅的即时战斗系统，配合技能组合与走位，还原最真实的刀光剑影。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🏯</div>
+                    <h3>门派争霸</h3>
+                    <p>五大门派各具特色，支持门派战、帮会战，在万人同屏的战场上争夺武林霸主地位。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3>剧情史诗</h3>
+                    <p>延续一代经典剧情，卷入南明湖畔的惊天阴谋，揭开武林失落的秘密。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🏹</div>
+                    <h3>装备养成</h3>
+                    <p>丰富的装备获取途径与锻造系统，打造属于你的专属神兵利器。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 职业介绍 -->
+        <section id="classes" class="container">
+            <h2 class="section-title">门派职业</h2>
+            <div class="classes-grid">
+                <!-- 峨眉 -->
+                <article class="class-card">
+                    <img src="https://picsum.photos/seed/emei/400/300.jpg" alt="峨眉派" class="class-img">
+                    <div class="class-info">
+                        <h3>峨眉派</h3>
+                        <p>天下出师门，峨眉为第一。峨眉弟子多为女子，以针为兵器，擅长治疗与辅助，是队伍中不可或缺的存在。</p>
+                        <div class="tags">
+                            <span class="tag">治疗</span>
+                            <span class="tag">控制</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 武当 -->
+                <article class="class-card">
+                    <img src="https://picsum.photos/seed/wudang/400/300.jpg" alt="武当派" class="class-img">
+                    <div class="class-info">
+                        <h3>武当派</h3>
+                        <p>以柔克刚，以静制动。武当弟子擅长远程法术攻击与群体控制，讲究道法自然，飘逸灵动。</p>
+                        <div class="tags">
+                            <span class="tag">法术</span>
+                            <span class="tag">控制</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 少林 -->
+                <article class="class-card">
+                    <img src="https://picsum.photos/seed/shaolin/400/300.jpg" alt="少林派" class="class-img">
+                    <div class="class-info">
+                        <h3>少林派</h3>
+                        <p>佛门净地，刚猛无俦。少林弟子防御力极高，近战物理攻击专家，是冲锋陷阵的肉盾。</p>
+                        <div class="tags">
+                            <span class="tag">近战</span>
+                            <span class="tag">防御</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 丐帮 -->
+                <article class="class-card">
+                    <img src="https://picsum.photos/seed/qiaoban/400/300.jpg" alt="丐帮" class="class-img">
+                    <div class="class-info">
+                        <h3>丐帮</h3>
+                        <p>天下第一大帮，以打狗棒法闻名。丐帮弟子攻击力强大且灵活，是战场上最令人头疼的存在。</p>
+                        <div class="tags">
+                            <span class="tag">高攻</span>
+                            <span class="tag">灵活</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 资讯与榜单 -->
+        <section id="news" class="container">
+            <div class="news-layout">
+                <div class="news-list">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--secondary-color);">最新公告</h3>
+                    <div class="news-item">
+                        <span class="news-date">2023-10-24</span>
+                        <a href="#" class="news-title">《剑侠情缘2》周年庆版本更新公告：新地图“南明湖”开启</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">2023-10-20</span>
+                        <a href="#" class="news-title">维护通知：服务器例行停机维护安排</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">2023-10-15</span>
+                        <a href="#" class="news-title">关于打击外挂行为的公告及封号处理结果公示</a>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">2023-10-10</span>
+                        <a href="#" class="news-title">“侠影重现”线下活动报名开启，共赴江湖之约</a>
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <h3>全服排行榜</h3>
+                    <ul class="rank-list">
+                        <li>
+                            <div style="display:flex; align-items:center;">
+                                <span class="rank-num">1</span>
+                                <a href="#">第一服务器</a>
+                            </div>
+                            <span>活跃度 98%</span>
+                        </li>
+                        <li>
+                            <div style="display:flex; align-items:center;">
+                                <span class="rank-num">2</span>
+                                <a href="#">第二服务器</a>
+                            </div>
+                            <span>活跃度 95%</span>
+                        </li>
+                        <li>
+                            <div style="display:flex; align-items:center;">
+                                <span class="rank-num">3</span>
+                                <a href="#">第三服务器</a>
+                            </div>
+                            <span>活跃度 92%</span>
+                        </li>
+                        <li>
+                            <div style="display:flex; align-items:center;">
+                                <span class="rank-num">4</span>
+                                <a href="#">第四服务器</a>
+                            </div>
+                            <span>活跃度 88%</span>
+                        </li>
+                        <li>
+                            <div style="display:flex; align-items:center;">
+                                <span class="rank-num">5</span>
+                                <a href="#">第五服务器</a>
+                            </div>
+                            <span>活跃度 85%</span>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- 下载区域 -->
+        <section id="download" class="download-section">
+            <div class="container">
+                <h2 style="color: #fff; margin-bottom: 1rem;">即刻加入江湖</h2>
+                <p style="color: #ccc; margin-bottom: 2rem;">免费下载客户端，开启你的侠客之旅</p>
+                <div class="download-box">
+                    <a href="#" class="download-btn">下载客户端</a>
+                    <div style="font-size: 0.8rem; color: #666; margin-top: 10px;">
+                        操作系统：Windows 7/10/11<br>
+                        推荐配置：Intel i3 / 4G 内存
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2; min-width: 300px;">
+                    <h4>关于剑侠情缘2</h4>
+                    <p style="color: #888; max-width: 500px;">
+                        剑侠情缘2网络版是由金山游戏精心打造的经典武侠MMORPG，致力于为玩家还原一个真实、热血、充满恩怨情仇的虚拟江湖世界。
+                    </p>
+                </div>
+                <div class="footer-col" style="flex: 1; min-width: 150px;">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">官方网站</a></li>
+                        <li><a href="#">玩家社区</a></li>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">客服中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" style="flex: 1; min-width: 150px;">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方论坛</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 金山游戏. All Rights Reserved. 本页面为设计展示，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
