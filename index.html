@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三级电视-高清画质与专业信号解决方案</title>
+    <meta name="description" content="三级电视专业提供高清信号接收、画质优化及显示设备评测指南。涵盖3D立体视觉技术、专业级显示标准及家庭影音搭建方案。">
+    <meta name="keywords" content="三级电视,高清电视,3D电视,专业显示,画质优化">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #3b82f6;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background-color: rgba(255,255,255,0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .view-all {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #cbd5e1;
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid #f1f5f9;
+            padding-top: 1rem;
+        }
+
+        /* Feature List */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Comparison Table */
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check-icon::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .cross-icon::before {
+            content: '✕';
+            color: #ef4444;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: white;
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-light);
+            background-color: #f8fafc;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.25rem 1.25rem;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        .icon-plus {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #94a3b8;
+            padding: 4rem 1rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin: 1rem 0;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <span>◆</span> 三级电视
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#features">技术优势</a></li>
+                <li><a href="#comparison">选购指南</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta-button">获取评测报告</a>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>重新定义视觉体验</h1>
+    <p>探索专业级显示技术与高清信号传输的完美结合。无论是家庭影院搭建还是专业内容创作，三级电视为您提供超越预期的视觉盛宴。</p>
+    <div class="hero-tags">
+        <span class="tag">4K超高清</span>
+        <span class="tag">HDR10+</span>
+        <span class="tag">智能互联</span>
+        <span class="tag">低延迟响应</span>
+    </div>
+    <a href="#comparison" class="cta-button" style="background-color: var(--accent-color);">查看规格对比</a>
+</section>
+
+<main class="container">
+
+    <!-- Technical Features Section -->
+    <section id="features">
+        <div class="section-header">
+            <h2 class="section-title">核心技术优势</h2>
+            <a href="#" class="view-all">了解更多技术细节</a>
+        </div>
+        <div class="feature-list">
+            <div class="feature-item">
+                <div class="feature-icon">✦</div>
+                <h3>高动态范围</h3>
+                <p>支持HDR10与HLG标准，展现更丰富的色彩层次与深邃的黑色表现，还原真实世界光影。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h3>极速响应速度</h3>
+                <p>专为电竞与快速动态画面设计，毫秒级响应时间，彻底消除拖影与残影现象。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📡</div>
+                <h3>智能信号处理</h3>
+                <p>内置AI画质芯片，自动优化输入信号，提升对比度与饱和度，适应不同内容源。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">热门机型推荐</h2>
+            <a href="#" class="view-all">浏览全部产品</a>
+        </div>
+        <div class="grid-3">
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/tv1/400/250" alt="专业级曲面电视">
+                    <span class="card-badge">旗舰新品</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">ProView X9 曲面系列</h3>
+                    <p class="card-desc">配备OLED面板，拥有无限对比度与100% DCI-P3色域，打造沉浸式观影体验。</p>
+                    <div class="card-meta">
+                        <span>分辨率：8K</span>
+                        <span>接口：HDMI 2.1</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/tv2/400/250" alt="游戏专用电视">
+                    <span class="card-badge">游戏首选</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Gamer Z1 游戏电视</h3>
+                    <p class="card-desc">专为次世代主机优化，支持144Hz刷新率与VRR可变刷新率，零输入延迟。</p>
+                    <div class="card-meta">
+                        <span>分辨率：4K</span>
+                        <span>刷新率：144Hz</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/tv3/400/250" alt="智能家庭电视">
+                    <span class="card-badge">性价比之选</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">SmartView Lite 智能电视</h3>
+                    <p class="card-desc">全场景智能语音控制，海量应用生态，让家庭娱乐中心触手可及。</p>
+                    <div class="card-meta">
+                        <span>分辨率：4K</span>
+                        <span>系统：Android TV</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Buying Guide / Comparison -->
+    <section id="comparison">
+        <div class="section-header">
+            <h2 class="section-title">选购指南与对比</h2>
+        </div>
+        <div class="comparison-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>特性维度</th>
+                        <th>普通液晶电视</th>
+                        <th>专业级三级电视</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>色彩表现</td>
+                        <td>标准色域，色彩偏淡</td>
+                        <td class="check-icon">广色域覆盖，色彩精准还原</td>
+                    </tr>
+                    <tr>
+                        <td>动态画面</td>
+                        <td>运动补偿较弱</td>
+                        <td class="check-icon">高刷新率+MEMC，画面流畅无拖影</td>
+                    </tr>
+                    <tr>
+                        <td>观看距离</td>
+                        <td>适合3米以上观看</td>
+                        <td class="check-icon">适合2-3米近距离高保真观看</td>
+                    </tr>
+                    <tr>
+                        <td>接口标准</td>
+                        <td>HDMI 2.0</td>
+                        <td class="check-icon">HDMI 2.1，支持4K 120Hz输入</td>
+                    </tr>
+                    <tr>
+                        <td>智能系统</td>
+                        <td>定制系统，生态有限</td>
+                        <td class="check-icon">开放安卓系统，应用丰富</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="section-header">
+            <h2 class="section-title">常见问题解答</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    三级电视与普通电视的主要区别是什么？
+                    <span class="icon-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>三级电视通常指在色彩管理、响应速度、信号处理算法及硬件配置上达到专业级标准的显示设备。它们拥有更广的色域、更高的刷新率以及更智能的画质调校，能够提供接近专业监视器的视觉体验。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    什么样的观看距离适合三级电视？
+                    <span class="icon-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>由于三级电视通常具有极高的分辨率和精细的像素排列，建议观看距离在屏幕高度的1.2倍至1.5倍之间。过近观看可能会暴露出像素点，过远则无法完全发挥其高分辨率带来的清晰度优势。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    HDMI 2.1接口对普通用户有用吗？
+                    <span class="icon-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>非常有用。除了支持更高带宽的4K 120Hz视频传输外，HDMI 2.1还支持可变刷新率（VRR）和自动低延迟模式（ALLM），这对于连接次世代游戏主机或高端电脑显示器尤为重要，能显著减少画面撕裂和卡顿。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="logo" style="margin-bottom: 1rem; color: white;">
+                <span>◆</span> 三级电视
+            </div>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+                致力于为专业创作者与高端家庭用户提供最前沿的显示技术与解决方案。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>产品系列</h4>
+            <ul>
+                <li><a href="#">OLED 专业版</a></li>
+                <li><a href="#">Mini-LED 旗舰</a></li>
+                <li><a href="#">电竞显示器</a></li>
+                <li><a href="#">商用显示屏</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>技术支持</h4>
+            <ul>
+                <li><a href="#">驱动下载</a></li>
+                <li><a href="#">安装指南</a></li>
+                <li><a href="#">质保政策</a></li>
+                <li><a href="#">联系客服</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>关注我们</h4>
+            <ul>
+                <li><a href="#">官方微博</a></li>
+                <li><a href="#">微信公众号</a></li>
+                <li><a href="#">B站直播间</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 三级电视技术中心 版权所有. 本页面仅作演示用途。</p>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+          </html>
